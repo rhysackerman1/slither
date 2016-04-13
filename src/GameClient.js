@@ -61,7 +61,7 @@ GameClient.prototype.start = function() {
 
     function onListening() {
 		if ( this.travis ) {
-			process.exit(1);
+			process.exit(0);
 			return false;
 		}
         var addr = this.webServer.address();
