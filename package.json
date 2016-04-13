@@ -19,7 +19,7 @@
 	"devDependencies": {},
 	"scripts": {
 		"start": "node ./src/index.js",
-		"test": "cd ./src && node ./index.js --client --travis"
+		"test": "cd ./src && sudo su && node ./index.js --client --travis"
 	},
 	"repository": {
 		"type": "git",
