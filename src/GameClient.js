@@ -5,28 +5,34 @@ var https = require('https');
 var http = require('http');
 var fs = require("fs");
 
-// ClientServer implementation
-function ClientServer() {
+// GameClient implementation
+function GameClient() {
     // Config
-    this.config = { // Border - Right: X increases, Down: Y increases (as of 2015-05-20)
-		serverType: 'http',
-		webserverPort: 80,
-		serverPort: 433    };
+    this.config = {
+		serverType: "http",
+		serverPort: 80,
+		serverName: "Plither",
+		serverUrl: "slither.gq",
+		gameservers: [
+			{"ip":"127.0.0.1","po":443}
+		]
+	};
 
     // Parse config
     this.loadConfig();
 }
 
-module.exports = ClientServer;
+module.exports = GameClient;
 
-ClientServer.prototype.start = function() {
-    WebApp.set('port', this.config.webserverPort);
-    WebApp.setMaster(this);
-    this.httpServer = http.createServer(WebApp);
+GameClient.prototype.start = function() {
+    WebApp.set('port', this.config.serverPort);
+    WebApp.setConfigs( this );
 
-    this.httpServer.listen(this.config.webserverPort);
-    this.httpServer.on('error', onError.bind(this));
-    this.httpServer.on('listening', onListening.bind(this));
+    this.webServer = ( this.config.serverType == 'http' ? http.createServer(WebApp) : https.createServer(WebApp) );
+
+    this.webServer.listen(this.config.serverPort);
+    this.webServer.on('error', onError.bind(this));
+    this.webServer.on('listening', onListening.bind(this));
 	
 	// functions
 	function onError(error) {
@@ -51,14 +57,14 @@ ClientServer.prototype.start = function() {
     }
 
     function onListening() {
-        var addr = this.httpServer.address();
+        var addr = this.webServer.address();
         var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-        console.log('\u001B[31m[Client]\u001B[0m Client Server started at ' + bind);
+        console.log('\u001B[31m[Client]\u001B[0m Game Client started at ' + bind);
 		return true;
     }
 };
 
-ClientServer.prototype.loadConfig = function() {
+GameClient.prototype.loadConfig = function() {
     try {
         // Load the contents of the config file
         var load = JSON.parse(fs.readFileSync('./configs/ClientConfig.json', 'utf-8'));

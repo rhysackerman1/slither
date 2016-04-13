@@ -1,6 +1,6 @@
 {
 	"name": "Plither",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Open source Slither.io server and client",
 	"main": "src/index.js",
 	"dependencies": {
@@ -8,6 +8,8 @@
 		"cookie-parser": "latest",
 		"serve-favicon": "latest",
 		"body-parser": "latest",
+		"geoip-lite": "latest",
+		"ipaddr.js": "latest",
 		"express": "latest",
 		"morgan": "latest",
 		"debug": "latest",

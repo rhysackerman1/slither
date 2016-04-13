@@ -19,9 +19,9 @@ process.argv.forEach(function(val) {
 });
 
 if( runClient ){
-	var ClientServer = require('./ClientServer');
-	var clientServer = new ClientServer();
-	clientServer.start();
+	var GameClient = require('./GameClient');
+	var gameClient = new GameClient();
+	gameClient.start();
 } else {
 	var GameServer = require('./GameServer');
 	var gameServer = new GameServer( ( fs.existsSync( gConfig ) ? gConfig : './configs/GameServer.json' ) );

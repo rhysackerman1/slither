@@ -1,5 +1,12 @@
 {
 	"serverType": "http",
-	"webserverPort": 80,
-	"serverPort": 433
+	"serverPort": 80,
+	"serverName": "Plither",
+	"serverUrl": "slither.gq",
+	"gameservers": [
+		{
+			"ip": "127.0.0.1",
+			"po": 443
+		}
+	]
 }
