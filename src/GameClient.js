@@ -6,7 +6,10 @@ var http = require('http');
 var fs = require("fs");
 
 // GameClient implementation
-function GameClient() {
+function GameClient( travisCompile ) {
+	// Test compile
+	this.travis = travisCompile;
+	
     // Config
     this.config = {
 		serverType: "http",
@@ -57,9 +60,13 @@ GameClient.prototype.start = function() {
     }
 
     function onListening() {
+		if ( this.travis ) {
+			process.exit(1);
+			return false;
+		}
         var addr = this.webServer.address();
         var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-        console.log('\u001B[31m[Client]\u001B[0m Game Client started at ' + bind);
+		console.log('\u001B[31m[Client]\u001B[0m Game Client started at ' + bind);
 		return true;
     }
 };
