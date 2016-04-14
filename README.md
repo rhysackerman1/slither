@@ -2,7 +2,7 @@
 An Open-source implementation of the Slither.io server.
 
 #### Stages of development:
-- [x] Client (revision 56)
+- [x] Client (revision: Z48fq)
 - [ ] Game Server
 - To be continued...
 
