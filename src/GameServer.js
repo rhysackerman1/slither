@@ -26,7 +26,7 @@ module.exports = GameServer;
 
 GameServer.prototype.start = function() {
 	if ( this.travis ) {
-		process.exit(1);
+		process.exit(0);
 		return false;
 	}
 	console.log('\u001B[31m[Game]\u001B[0m Game Server started');
