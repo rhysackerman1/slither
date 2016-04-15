@@ -1,4 +1,4 @@
-# Plither [![Travis-CI](https://travis-ci.org/PlitherProject/Plither.svg)](https://travis-ci.org/PlitherProject/Plither)
+# Plither [![Travis-CI](https://api.travis-ci.org/PlitherProject/Plither.svg?branch=master)](https://travis-ci.org/PlitherProject/Plither)
 An Open-source implementation of the Slither.io server.
 
 #### Stages of development:
