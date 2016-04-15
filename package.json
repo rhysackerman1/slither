@@ -18,7 +18,7 @@
     },
     "devDependencies": {},
     "scripts": {
-        "start": "node ./src/index.js",
+        "start": "cd ./src && node ./index.js",
         "test": "cd ./src && sudo node ./index.js --client --travis"
     },
     "repository": {

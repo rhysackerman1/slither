@@ -12,21 +12,21 @@ var countServers = 1;
 
 // Run PlitherWeb
 process.argv.forEach(function(val) {
-	if ( val == '--travis' ) {
-		Travis = true;
-	} else if ( val == '--client' ) {
-		runClient = true;
-	} else if (regServer.test(val)) {
-		gConfig = regServer.exec(val)[1];
-	}
+    if ( val == '--travis' ) {
+        Travis = true;
+    } else if ( val == '--client' ) {
+        runClient = true;
+    } else if (regServer.test(val)) {
+        gConfig = regServer.exec(val)[1];
+    }
 });
 
 if( runClient ){
-	var GameClient = require('./GameClient');
-	var gameClient = new GameClient(Travis);
-	gameClient.start();
+    var GameClient = require('./GameClient');
+    var gameClient = new GameClient(Travis);
+    gameClient.start();
 } else {
-	var GameServer = require('./GameServer');
-	var gameServer = new GameServer((fs.existsSync( gConfig ) ? gConfig : './configs/GameServer.json'), Travis);
-	gameServer.start();
+    var GameServer = require('./GameServer');
+    var gameServer = new GameServer((fs.existsSync( gConfig ) ? gConfig : './configs/GameServer.json'), Travis);
+    gameServer.start();
 }

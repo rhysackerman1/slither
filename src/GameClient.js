@@ -7,19 +7,19 @@ var fs = require("fs");
 
 // GameClient implementation
 function GameClient( travisCompile ) {
-	// Test compile
-	this.travis = travisCompile;
-	
+    // Test compile
+    this.travis = travisCompile;
+
     // Config
     this.config = {
-		serverType: "http",
-		serverPort: 80,
-		serverName: "Plither",
-		serverUrl: "slither.gq",
-		gameservers: [
-			{"ip":"127.0.0.1","po":443}
-		]
-	};
+        serverType: "http",
+        serverPort: 80,
+        serverName: "Plither",
+        serverUrl: "slither.gq",
+        gameservers: [
+            {"ip":"127.0.0.1","po":443}
+        ]
+    };
 
     // Parse config
     this.loadConfig();
@@ -37,8 +37,8 @@ GameClient.prototype.start = function() {
     this.webServer.on('error', onError.bind(this));
     this.webServer.on('listening', onListening.bind(this));
 	
-	// functions
-	function onError(error) {
+    // functions
+    function onError(error) {
         if (error.syscall !== 'listen') {
             throw error;
         }
@@ -56,18 +56,18 @@ GameClient.prototype.start = function() {
             default:
                 throw error;
         }
-		return false;
+        return false;
     }
 
     function onListening() {
-		if ( this.travis ) {
-			process.exit(0);
-			return false;
-		}
+        if ( this.travis ) {
+            process.exit(0);
+            return false;
+        }
         var addr = this.webServer.address();
         var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-		console.log('\u001B[31m[Client]\u001B[0m Game Client started at ' + bind);
-		return true;
+        console.log('\u001B[31m[Client]\u001B[0m Game Client started at ' + bind);
+        return true;
     }
 };
 

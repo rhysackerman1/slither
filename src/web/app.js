@@ -17,7 +17,7 @@ var app = express();
 
 // view engine setup
 app.setConfigs = function ( configs ) {
-	gameClient = configs;
+    gameClient = configs;
 };
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -37,14 +37,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Web Client
 app.get('/', function (req, res, next) {
-	var dateIp = geoip.lookup(ipaddr.process(req.ip).toString());
+    var dateIp = geoip.lookup(ipaddr.process(req.ip).toString());
     res.render('home', {
-		coreConfigs: gameClient.config,
-		revision: revision,
-		showlayout: true,
-		geo: ( dateIp ? dateIp : {"country":"NONE"} ),
-		title: ''		
-	});
+        coreConfigs: gameClient.config,
+        revision: revision,
+        showlayout: true,
+        geo: ( dateIp ? dateIp : {"country":"NONE"} ),
+        title: ''		
+    });
 });
 
 // Social box
@@ -54,10 +54,9 @@ app.get('/social-box', function (req, res, next) {
 
 // Ajax
 app.get('/getservers', function (req, res, next) {
-	console.log(req.ip);
-	res.render('ajax', {
-		content: JSON.stringify(gameClient.config.gameservers),
-	});
+    res.render('ajax', {
+        content: JSON.stringify(gameClient.config.gameservers)
+    });
 });
 
 // catch 404 and forward to error handler
