@@ -3,7 +3,10 @@ var WebSocket = require('ws');
 var fs = require("fs");
 
 // GameServer implementation
-function GameServer( confile ) {
+function GameServer( confile, travisCompile ) {
+	// Test compile
+    this.travis = travisCompile;
+	
     // Startup
     this.nodesPlayer = []; // Nodes controlled by players
     this.movingNodes = []; // For move engine
@@ -22,6 +25,10 @@ function GameServer( confile ) {
 module.exports = GameServer;
 
 GameServer.prototype.start = function() {
+	if ( this.travis ) {
+		process.exit(1);
+		return false;
+	}
 	console.log('\u001B[31m[Game]\u001B[0m Game Server started');
 };
 
