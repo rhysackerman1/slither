@@ -18,8 +18,8 @@
     },
     "devDependencies": {},
     "scripts": {
-        "start": "cd ./src && node ./index.js",
-        "test": "cd ./src && sudo node ./index.js --travis"
+        "start": "node ./src/index.js",
+        "test": "sudo node ./src/index.js --travis"
     },
     "repository": {
         "type": "git",

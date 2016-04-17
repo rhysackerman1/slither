@@ -3,7 +3,6 @@ var WebApp = require('./web/app');
 var WebSocket = require('ws');
 var https = require('https');
 var http = require('http');
-var fs = require("fs");
 
 // GameClient implementation
 function GameClient( travisCompile ) {
@@ -11,18 +10,7 @@ function GameClient( travisCompile ) {
     this.travis = travisCompile;
 
     // Config
-    this.config = {
-        serverType: "http",
-        serverPort: 80,
-        serverName: "Plither",
-        serverUrl: "slither.gq",
-        gameservers: [
-            {"ip":"127.0.0.1","po":443}
-        ]
-    };
-
-    // Parse config
-    this.loadConfig();
+    this.config = require('./configs/ClientConfig');
 }
 
 module.exports = GameClient;
@@ -68,24 +56,5 @@ GameClient.prototype.start = function() {
         var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
         console.log('\u001B[31m[Client]\u001B[0m Game Client started at ' + bind);
         return true;
-    }
-};
-
-GameClient.prototype.loadConfig = function() {
-    try {
-        // Load the contents of the config file
-        var load = JSON.parse(fs.readFileSync('./configs/ClientConfig.json', 'utf-8'));
-
-        // Replace all the default config's values with the loaded config's values
-        for (var obj in load) {
-            this.config[obj] = load[obj];
-        }
-
-    } catch (err) {
-        // No config
-        console.log(err);
-
-        // Create a new config
-        fs.writeFileSync('./configs/ClientConfig.json', JSON.stringify(this.config, null, '\t'));
     }
 };
