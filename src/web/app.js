@@ -11,7 +11,7 @@ var hbs = require('hbs');
 var fs = require('fs');
 
 var gameClient = null;
-var revision = "Z48fq";
+var revision = "G8dni";
 
 var app = express();
 
