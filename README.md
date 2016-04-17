@@ -1,9 +1,9 @@
-# Plither [![Travis-CI](https://api.travis-ci.org/PlitherProject/Plither.svg?branch=master)](https://travis-ci.org/PlitherProject/Plither)
+# Plither
 An Open-source implementation of the Slither.io server.
 
 #### Stages of development:
 - [x] Client (revision: Z48fq) [![Travis-CI](https://travis-ci.org/PlitherProject/Plither.svg?branch=Client)](https://travis-ci.org/PlitherProject/Plither)
-- [ ] Game Server [![Travis-CI](https://travis-ci.org/PlitherProject/Plither.svg?branch=Server)](https://travis-ci.org/PlitherProject/Plither)
+- [ ] Game Server
 - To be continued...
 
 ##Feedback
