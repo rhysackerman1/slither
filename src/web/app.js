@@ -54,9 +54,7 @@ app.get('/social-box', function (req, res, next) {
 
 // Ajax
 app.get('/getservers', function (req, res, next) {
-    res.render('ajax', {
-        content: JSON.stringify(gameClient.config.gameservers)
-    });
+	res.send(JSON.stringify(gameClient.config.gameservers));
 });
 
 // catch 404 and forward to error handler
