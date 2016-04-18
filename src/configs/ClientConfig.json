@@ -1,5 +1,4 @@
 {
-	"serverType": "http",
 	"serverPort": 80,
 	"serverName": "Plither",
 	"serverUrl": "slither.gq",

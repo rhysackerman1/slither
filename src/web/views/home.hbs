@@ -99,21 +99,6 @@ var o = {};
 if (!window.console) window.console = {};
 if (!window.console.log) window.console.log = function (a) { };
 
-if (((window.location.href+'').toLowerCase()).indexOf('https:') == 0) {
- window.location = 'http:'+window.location.href.substr(6);
-}
-
-/*
-
-stop DDOSing me, lol
-
-window.onerror = function(message, url, lineNumber) {  
-  var ii = document.createElement('img');
-  ii.src = 'http://slither.io/error.jpg?m='+encodeURIComponent(message)+'&u='+encodeURIComponent(url)+'&ln='+encodeURIComponent(lineNumber);
-  return false;
-};
-*/
-
 function forceServer (a, b) {
  sos = [];
  forcing = true;

@@ -1,7 +1,5 @@
 // Imports
 var WebApp = require('./web/app');
-var WebSocket = require('ws');
-var https = require('https');
 var http = require('http');
 
 // GameClient implementation
@@ -19,8 +17,7 @@ GameClient.prototype.start = function() {
     WebApp.set('port', this.config.serverPort);
     WebApp.setConfigs( this );
 
-    this.webServer = ( this.config.serverType == 'http' ? http.createServer(WebApp) : https.createServer(WebApp) );
-
+    this.webServer = http.createServer(WebApp);
     this.webServer.listen(this.config.serverPort);
     this.webServer.on('error', onError.bind(this));
     this.webServer.on('listening', onListening.bind(this));
