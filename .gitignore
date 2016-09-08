@@ -1,3 +1,5 @@
+# Intellij
+.idea/
 # Logs
 logs
 *.log
@@ -23,18 +25,19 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
+# Dependency directories
 node_modules
+nbproject/private
 
 # Optional npm cache directory
 .npm
 
 # Optional REPL history
 .node_repl_history
-/nbproject/private/
+
 
 # Servers list
-/src/client/public/*.txt
+src/client/public/*.txt
 
-# Unblock Gofbot
-!/src/server
+# Unblock Server
+!src/server
