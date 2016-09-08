@@ -2,7 +2,7 @@
 An Open-source implementation of the Slither.io client.
 
 #### Stages of development:
-- [x] Client (revision: 88enx) [![Travis-CI](https://travis-ci.org/PlitherProject/Plither.svg)](https://travis-ci.org/PlitherProject/Plither)
+- [x] Client (revision: 8jg9z) [![Travis-CI](https://travis-ci.org/PlitherProject/Plither.svg)](https://travis-ci.org/PlitherProject/Plither)
 - [ ] Game Server
 - To be continued...
 

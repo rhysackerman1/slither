@@ -1,8 +1,11 @@
-<div id='nbg' style='position: fixed; left: 0px; top: 0px;'></div>
+<div id='nbg' style='position: fixed; left: 0px; top: 0px;'>
+</div>
+
+
 <div id='login' style='position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 20; margin-top: 64px;'>
   <div id='logo' style='margin-left: auto; margin-right: auto; text-align: center; width: 450px; height: 115px; margin-top: 50px;'>
    <div style='position: absolute; z-index: 999999;' id='logoih'>
-    &nbsp;
+    
    </div>
   </div>
   
@@ -35,7 +38,7 @@
 
 
 <div id='smh' style='opacity: 0; position: fixed; left: 0px; top: 0px; z-index: 21;'>
- <img id='cstx' class='nsi' border=0 draggable=false width=225 height=36 src='/assets/img/customskins2.png' style='position: fixed; bottom: 30px; opacity: .4; z-index: 50; display: none;'>
+ <img id='cstx' class='nsi' border=0 draggable=false width=225 height=36 style='position: fixed; bottom: 30px; opacity: .4; z-index: 50; display: none;'>
  
  <div id='fbh' style='position: fixed; bottom: 20px; z-index: 50;'>
   <a class='btn btnt' draggable="false" id='fb' style='width:80px; height:74px;' href='#'>
@@ -45,16 +48,17 @@
  
  <div id='twth' style='position: fixed; bottom: 20px; z-index: 50;'>
   <a class='btn btnt' draggable="false" id='twt' style='width:80px; height:74px;' href='#'>
-   <img class='nsi' border=0 draggable=false width=80 height=74 src='/assets/img/twitter.png'>
+   <img class='nsi' border=0 draggable=false width=80 height=74 src='/assets/img/twitter3.png'>
   </a>
  </div>
  
  
  <div id='cskh' style='position: fixed; left: 20px; bottom: 16px; z-index: 50; display: none;'>
   <a class='btn btnt' draggable="false" id='csk' style='width:95px; height:89px;' href='#'>
-   <img class='nsi' border=0 draggable=false width=95 height=89 src='/assets/img/changeskin.png'>
+   <img class='nsi' border=0 draggable=false width=95 height=89 src='/assets/img/changeskin2.png'>
   </a>
  </div>
+
  
  <div id='grqh' style='position: fixed; right: 20px; top: 16px; z-index: 50;'>
   <a class='btn btnt' draggable="false" id='grq' style='width:90px; height:87px;' href='#'>
@@ -63,10 +67,12 @@
  </div>
 
 
- <div id='plq' style='position: fixed; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 13px; color: #408040; right: 10px; top: 10px; width: 260px; height: 400px; text-align: right;'>&nbsp;</div>
+ <div id='plq' style='position: fixed; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 13px; color: #408040; right: 10px; top: 10px; width: 260px; height: 400px; text-align: right;'>
+  <a class='lq' href='http://poal.me/klpijd' target='_blank'></a>
+ </div>
 
 
- <div id='clq' style='position: fixed; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 12px; left: 10px; bottom: 10px; width: 260px; height: 20px; text-align: center;'>
+ <div id='clq' style='position: fixed; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 12px; left: 10px; bottom: 10px; width: 260px; height: 20px; text-align: center; color: #404880;'>
   <a class='lq2' href='https://github.com/PlitherProject/Plither' target='_blank'>GitHub</a>
  </div>
 
@@ -75,13 +81,13 @@
 
 <div id='pskh' style='display: none; opacity: 0; position: fixed; z-index: 52;'>
  <a class='btn btnt' draggable="false" id='psk' style='width:87px; height:88px;' href='#'>
-  <img class='nsi' border=0 draggable=false width=87 height=88 src='/assets/img/prev.png'>
+  <img class='nsi' border=0 draggable=false width=87 height=88 src='/assets/img/prev3.png'>
  </a>
 </div>
 
 <div id='nskh' style='display: none; opacity: 0; position: fixed; z-index: 52;'>
  <a class='btn btnt' draggable="false" id='nsk' style='width:87px; height:88px;' href='#'>
-  <img class='nsi' border=0 draggable=false width=87 height=88 src='/assets/img/next.png'>
+  <img class='nsi' border=0 draggable=false width=87 height=88 src='/assets/img/next3.png'>
  </a>
 </div>
 
@@ -89,15 +95,12 @@
 // Show Skins
 localStorage.edttsg = "1";
 
-// Default configs
-var country = '{{geo.country}}';
-var rmsos = [];
-var xhrqs = [];
-var wsu = 0;
-var o = {};
-
 if (!window.console) window.console = {};
 if (!window.console.log) window.console.log = function (a) { };
+
+if (((window.location.href+'').toLowerCase()).indexOf('https:') == 0) {
+ window.location = 'http:'+window.location.href.substr(6);
+}
 
 function forceServer (a, b) {
  sos = [];
@@ -108,6 +111,14 @@ function forceServer (a, b) {
  bso.ac = 999;
  sos.push(bso);
 }
+
+var rmsos = [];
+// rmsos.push( {a:[76,84,79, 445]} );
+
+var wsu = 0;
+
+var xhrqs = [];
+
 
 function getDataHandler (xmlhttp) {
  var o = null;
@@ -122,6 +133,7 @@ function getDataHandler (xmlhttp) {
  return o;
 }
 
+
 function removeDataHandler (xmlhttp) {
  var cur_tm = Date.now();
  for (var i = xhrqs.length-1; i>=0; i--) {
@@ -132,6 +144,7 @@ function removeDataHandler (xmlhttp) {
   }
  }
 }
+
 
 function getData (u, o) {
  var xmlhttp;
@@ -173,5 +186,4 @@ $.getJSON( "/getservers?" + Math.random(), function( data ) {
 		sos = data
 	}
 });
-
 </script>

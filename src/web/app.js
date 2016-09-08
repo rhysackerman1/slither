@@ -2,8 +2,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var busboy = require('connect-busboy');
-var geoip = require('geoip-lite');
-var ipaddr = require('ipaddr.js');
 var express = require('express');
 var logger = require('morgan');
 var path = require('path');
@@ -11,7 +9,7 @@ var hbs = require('hbs');
 var fs = require('fs');
 
 var gameClient = null;
-var revision = "88enx";
+var revision = "8jg9z";
 
 var app = express();
 
@@ -37,12 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Web Client
 app.get('/', function (req, res, next) {
-    var dateIp = geoip.lookup(ipaddr.process(req.ip).toString());
     res.render('home', {
         coreConfigs: gameClient.config,
         revision: revision,
         showlayout: true,
-        geo: ( dateIp ? dateIp : {"country":"NONE"} ),
         title: ''		
     });
 });
