@@ -1,19 +1,19 @@
 // Imports
-var WebApp = require('./web/app');
+var WebApp = require('./client/app');
 var http = require('http');
 
-// GameClient implementation
-function GameClient( travisCompile ) {
+// MasterServer implementation
+function MasterServer( travisCompile ) {
     // Test compile
     this.travis = travisCompile;
 
     // Config
-    this.config = require('./configs/ClientConfig');
+    this.config = require('./config/config');
 }
 
-module.exports = GameClient;
+module.exports = MasterServer;
 
-GameClient.prototype.start = function() {
+MasterServer.prototype.start = function() {
     WebApp.set('port', this.config.serverPort);
     WebApp.setConfigs( this );
 

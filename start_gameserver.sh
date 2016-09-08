@@ -9,12 +9,12 @@ if [ "$?" -eq "0" ]; then
 	fi
 	echo "[BATCH] Debian detected. Using nodejs instead of node..."
 fi
-echo [BATCH] Starting Client
+echo [BATCH] Starting GameServer
 while true
 do
 	clear
-	$node ./src/index.js
+	$node src/server/index.js
 	echo -------------------------------------------------------
-	echo [BATCH] Client Shutdown, waiting 15 seconds before a restart.
+	echo [BATCH] GameServer Shutdown, waiting 15 seconds before a restart.
 	sleep 15
 done
