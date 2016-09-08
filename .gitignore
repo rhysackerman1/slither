@@ -37,4 +37,4 @@ node_modules
 /src/client/public/*.txt
 
 # Unblock Server
-!/src/server
+!src/server
