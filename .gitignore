@@ -36,5 +36,5 @@ node_modules
 # Servers list
 /src/client/public/*.txt
 
-# Unblock Gofbot
+# Unblock Server
 !/src/server
