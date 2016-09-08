@@ -1,3 +1,3 @@
-[submodule "src/server"]
-	path = src/server
+[submodule "src/serve"]
+	path = src/serve
 	url = git@github.com:RowanHarley/Slither-Server.git
