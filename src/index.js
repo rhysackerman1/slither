@@ -7,7 +7,7 @@ process.argv.forEach(function(val) {
     if (val == "--nomaster") {
         runMaster = true;
     } else if (val == "--travis") {
-        Travis = false;
+        Travis = true;
     } else if (val == "--help") {
         console.log("Proper Usage: node index.js [--nomaster]");
         console.log("    --nomaster          Run the game server.");

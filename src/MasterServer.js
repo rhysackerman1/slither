@@ -31,11 +31,11 @@ MasterServer.prototype.start = function() {
         // handle specific listen errors with friendly messages
         switch (error.code) {
             case 'EACCES':
-                console.log('\u001B[31m[Client]\u001B[0m ' + this.config.webserverPort + ' requires elevated privileges');
+                console.log('\u001B[31m[MasterServer]\u001B[0m ' + this.config.webserverPort + ' requires elevated privileges');
                 process.exit(1);
                 break;
             case 'EADDRINUSE':
-                console.log('\u001B[31m[Client]\u001B[0m ' + this.config.webserverPort + ' is already in use');
+                console.log('\u001B[31m[MasterServer]\u001B[0m ' + this.config.webserverPort + ' is already in use');
                 process.exit(1);
                 break;
             default:
@@ -51,7 +51,7 @@ MasterServer.prototype.start = function() {
         }
         var addr = this.webServer.address();
         var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-        console.log('\u001B[31m[Client]\u001B[0m Game Client started at ' + bind);
+        console.log('\u001B[31m[MasterServer]\u001B[0m MasterServer started at ' + bind);
         return true;
     }
 };
