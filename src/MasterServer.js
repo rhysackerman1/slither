@@ -8,7 +8,7 @@ function MasterServer( travisCompile ) {
     this.travis = travisCompile;
 
     // Config
-    this.config = require('./config/config');
+    this.config = require('./config');
 }
 
 module.exports = MasterServer;
