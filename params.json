@@ -1,0 +1,6 @@
+{
+  "name": "Plither",
+  "tagline": "Open source Slither.io server emulator",
+  "body": "# Plither\r\nAn Open-source implementation of the Slither.io server emulator.\r\n\r\n#### Stages of development:\r\n- Game Client\r\n- Game Server\r\n- To be continued...\r\n\r\n##Feedback\r\nIf something is broken, please create an issue.\r\n\r\nIf you enjoy this project, please star this repository!\r\n\r\n##License\r\nApache License 2.0",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
