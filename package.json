@@ -27,7 +27,7 @@
 		"express": "^4.12.4",
         "morgan": "^1.5.3",
         "hbs": "^2.9.0",
-        "ws": "^1.1.1"
+        "ws": "^7.2.0"
     },
     "devDependencies": {
         "run-sequence": "^1.2.2",
